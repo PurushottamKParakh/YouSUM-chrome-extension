@@ -1,0 +1,334 @@
+.popup {
+    width: 450px;
+    height: 400px;
+    padding: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 10px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #008080;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .content-section {
+    padding: 0 16px 16px 16px;
+  }
+  
+  .content-box {
+    background-color: #ffffff;
+    border: 1px solid #008080;
+    border-radius: 8px;
+    padding: 14px;
+    margin: 8px 0;
+    height: 280px;
+    overflow-y: auto;
+    margin-bottom: 16px;
+  }
+  
+  .url-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #008080;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+  
+  .section-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: #008080;
+    margin-bottom: 10px;
+  }
+  
+  .summary-line {
+    margin-bottom: 8px;
+  }
+  
+  .summary-line strong {
+    font-weight: 600;
+    color: #008080;
+  }
+  
+  .error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    height: 100%;
+  }
+  
+  .error-icon {
+    margin-bottom: 12px;
+  }
+  
+  .error-message {
+    color: #444;
+    font-size: 12px;
+  }
+  
+  .processing-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    height: 100%;
+  }
+  
+  .spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #008080;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 8px;
+  }
+  
+  .scrollable-content {
+    height: 100%;
+    overflow-y: auto;
+  }
+  
+  .header-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .settings-button {
+    background: none;
+    border: none;
+    padding: 4px;
+    color: #008080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+  }
+  
+  .settings-button:hover {
+    background-color: rgba(0, 128, 128, 0.1);
+  }
+  
+  .settings-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .settings-modal.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .settings-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 360px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .settings-header h4 {
+    margin: 0;
+    color: #008080;
+    font-size: 16px;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #666;
+    cursor: pointer;
+    padding: 4px 8px;
+  }
+  
+  .setting-group {
+    margin-bottom: 16px;
+  }
+  
+  .setting-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .setting-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #008080;
+    border-radius: 4px;
+    color: #333;
+    font-size: 12px;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  .save-button {
+    width: 100%;
+    padding: 8px;
+    background: #008080;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 16px;
+  }
+  
+  .save-button:hover {
+    opacity: 0.9;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .brand h3 {
+    margin: 0;
+    color: #008080;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  
+  .logo {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .message-box {
+    padding: 16px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    margin: 16px;
+  }
+
+  .settings-close-button {
+    width: 100%;
+    padding: 8px;
+    background: #008080;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 16px;
+    transition: opacity 0.2s ease;
+  }
+  
+  .settings-close-button:hover {
+    opacity: 0.9;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #008080;
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
