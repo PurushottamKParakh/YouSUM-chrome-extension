@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "YouSUM: YouTube Summary Extension",
+    "version": "1.0",
+    "description": "Summarize YouTube videos and display the transcript.",
+    "icons": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "permissions": ["activeTab", "tabs", "scripting", "storage"],
+    "host_permissions": ["https://www.youtube.com/*"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "background": {
+      "service_worker": "content.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
