@@ -125,7 +125,7 @@ const Popup: React.FC = () => {
 
  const fetchTranscript = async () => {
    if (!videoUrl) return;
-   const apiUrl = `http://127.0.0.1:5000/api/transcript?url=${encodeURIComponent(videoUrl)}&language=${settings.language}`;
+   const apiUrl = `http://127.0.0.1:5000/api/transcript?url=${encodeURIComponent(videoUrl)}&language=en`;
    setTranscript(prev => ({ ...prev, status: 'processing' }));
 
    try {
